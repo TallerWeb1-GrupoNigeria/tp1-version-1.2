@@ -6,9 +6,9 @@ import ar.edu.unlam.tallerweb1.modelo.Evento;
 
 public interface ServicioEvento {
 
-	public void crearEventoSERVICE(Evento evento);
-	public List<Evento> listarEventosSERVICE();
-	public void actualizarEventoSERVICE(Evento evento);
-	public List<Evento> buscarEventosSERVICE(String dato);
+	public void crearEventoService(Evento evento);
+	public List<Evento> listarEventosService();
+	public void actualizarEventoService(Evento evento);
+	public List<Evento> buscarEventosService(String dato);
 	
 }

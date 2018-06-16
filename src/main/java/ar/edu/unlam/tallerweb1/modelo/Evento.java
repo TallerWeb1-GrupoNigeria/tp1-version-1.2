@@ -19,7 +19,7 @@ public class Evento {
 	private String hora;
 	private String direccion;
 	private String imagen;
-	private String mostrar;
+	private boolean mostrar;
 	
 	
 
@@ -28,7 +28,7 @@ public class Evento {
 	}
 
 	public Evento(String nombre, String descripcion, String fecha, String hora, String direccion, String imagen,
-			String mostrar) {
+			boolean mostrar) {
 
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -98,11 +98,11 @@ public class Evento {
 		this.imagen = imagen;
 	}
 
-	public String getMostrar() {
+	public boolean getMostrar() {
 		return mostrar;
 	}
 
-	public void setMostrar(String mostrar) {
+	public void setMostrar(boolean mostrar) {
 		this.mostrar = mostrar;
 	}
 	

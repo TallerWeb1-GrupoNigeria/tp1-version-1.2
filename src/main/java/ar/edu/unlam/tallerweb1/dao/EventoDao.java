@@ -6,9 +6,9 @@ import ar.edu.unlam.tallerweb1.modelo.Evento;
 
 public interface EventoDao {
 
-	public void crearEventoDAO(Evento evento);
-	public List<Evento> listaEventosDAO();
-	public void actualizarEventoDAO(Evento evento);
-	public List<Evento> buscarEventoDAO(String dato);
+	public void crearEvento(Evento evento);
+	public List<Evento> listaEventos();
+	public void actualizarEvento(Evento evento);
+	public List<Evento> buscarEvento(String dato);
 	
 }
