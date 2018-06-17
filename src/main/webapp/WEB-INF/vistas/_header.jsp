@@ -41,7 +41,7 @@
         <div class="col-md-12">
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="inicioHome" class="nav-link">
                 <i class="fa fa-home fa-home"></i>&nbsp;Inicio</a>
             </li>
             <li class="nav-item">
@@ -59,6 +59,9 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a href="homeAdmin" class="nav-link">*Menu Admin*</a>
             </li>
           </ul>
         </div>

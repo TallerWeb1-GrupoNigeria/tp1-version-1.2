@@ -27,11 +27,13 @@ public class ControladorHome {
 	}*/
 	
 	
-	@RequestMapping(path = "/inicio")
+	@RequestMapping(path = "/inicioHome")
 	public ModelAndView inicio() {
 		
 		ModelMap model = new ModelMap();
 		model.put("keyListarEventos", servicioEvento.listarEventosService());
+		model.put("p","holaaaaa");
+		System.out.println(servicioEvento.listarEventosService());
 		return new ModelAndView ("inicio",model);
 	}
 	

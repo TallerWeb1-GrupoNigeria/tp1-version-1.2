@@ -1,5 +1,5 @@
-  
-  
+
+
   <!-- footer -->
   
   <div class="bg-dark text-white">
@@ -13,11 +13,11 @@
           <h2 class="mb-4 text-secondary">Mapsite</h2>
           <ul class="list-unstyled">
             <a href="#" class="text-white">Home</a>
-            <br>
+            <br />
             <a href="#" class="text-white">About us</a>
-            <br>
+            <br />
             <a href="#" class="text-white">Our services</a>
-            <br>
+            <br />
             <a href="#" class="text-white">Stories</a>
           </ul>
         </div>

@@ -1,56 +1,13 @@
 <%@ include file="_header.jsp" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
   <div class="py-2">
     <div class="container">
       <div class="row">
+        
+        <!-- CARROUSEL -->
+        
         <div class="col-md-9">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-        </div>
-      </div>
-      <div class="row py-2">
-        <div class="col-md-5">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
           <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -78,31 +35,57 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class="row py-2">
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+        
+        <!-- BANNER LADO DERECHO -->
+        
         <div class="col-md-3">
-          <img class="d-block img-fluid" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDW8nO9JhT_pEjebobq9pgUF2cEp0EUb1I&amp;markers=New+York+City&amp;center=New+York+City&amp;zoom=12&amp;size=640x480&amp;sensor=false"> </div>
+          <div class="blockquote">
+            <p class="mb-0">Blockquoute</p>
+            <div class="blockquote-footer">Someone famous in My memories</div>
+          </div>
+          <div class="blockquote">
+            <p class="mb-0">Blockquoute</p>
+            <div class="blockquote-footer">Someone famous in My memories</div>
+          </div>
+          <div class="blockquote">
+            <p class="mb-0">Blockquoute</p>
+            <div class="blockquote-footer">Someone famous in My memories</div>
+          </div>
+        </div>
       </div>
+      
+      <!-- 2 CARDS -->
+      <div class="row py-2">
+     
+      <c:forEach items="${keyListarEventos}" var="evento">
+        <div class="col-md-6">
+        
+          <div class="card">
+            <img class="card-img-top" src="img/${evento.getImagen()}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${ evento.getNombre() }</h5>
+              <p class="card-text">${ evento.getDescripcion() }</p>
+              <a href="#" class="btn btn-primary">Ir al Evento</a>
+            </div>
+          </div>
+        </div>
+        
+        </c:forEach>
+        
+        <!-- <div class="col-md-6">
+          <div class="card">
+            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div> -->
+        
+        
+      </div>
+      
       <div class="row">
         <div class="col-md-12">
           <ul class="pagination">
@@ -133,8 +116,8 @@
           </ul>
         </div>
       </div>
+      
     </div>
   </div>
-  
   
   <%@ include file="_footer.jsp" %>
