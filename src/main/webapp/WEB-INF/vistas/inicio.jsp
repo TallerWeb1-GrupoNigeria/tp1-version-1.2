@@ -1,6 +1,26 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"> </script>
+  <script>
+      function initMap() {
+        var uluru = {lat: -34.607034 , lng: -58.375516};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
   <div class="py-2">
     <div class="container">
       <div class="row">
@@ -37,7 +57,8 @@
         </div>
         
         <!-- BANNER LADO DERECHO -->
-        
+        <h3>My Google Maps Demo</h3>
+    	<div id="map"></div>
         <div class="col-md-3">
           <div class="blockquote">
             <p class="mb-0">Blockquoute</p>
