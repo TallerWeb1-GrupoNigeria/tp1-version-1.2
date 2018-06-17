@@ -1,0 +1,5 @@
+INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('1', 'evento1', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
+INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('2', 'evento2', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento2.jpg', 'si', 'Hola');
+INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('3', 'evento3', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
+INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('4', 'evento4', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento2.jpg', 'si', 'Hola');
+INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('5', 'evento5', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
