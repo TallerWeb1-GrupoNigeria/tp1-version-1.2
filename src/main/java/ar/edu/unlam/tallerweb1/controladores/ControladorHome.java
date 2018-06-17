@@ -18,15 +18,6 @@ public class ControladorHome {
 	@Inject
 	private ServicioEvento servicioEvento;
 	
-	
-	// @RequestMappings
-	
-	/*@RequestMapping(path = "/", method = RequestMethod.GET)
-	public ModelAndView redireccionarAlInicio() {
-		return new ModelAndView("redirect:/inicio");
-	}*/
-	
-	
 	@RequestMapping(path = "/inicioHome")
 	public ModelAndView inicio() {
 		
