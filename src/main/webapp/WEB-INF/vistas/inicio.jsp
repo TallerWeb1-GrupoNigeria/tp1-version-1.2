@@ -1,33 +1,13 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"> </script>
-  <script>
-      function initMap() {
-        var uluru = {lat: -34.607034 , lng: -58.375516};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <style>
-      #map {
-        width: 100%;
-        height: 400px;
-        background-color: grey;
-      }
-    </style>
+<link rel="stylesheet" href="css/estilo-mapa.css" type="text/css">
   <div class="py-2">
     <div class="container">
       <div class="row">
         
         <!-- CARROUSEL -->
         
-        <div class="col-md-9">
+        <div class="col-md-6">
           <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -57,9 +37,10 @@
         </div>
         
         <!-- BANNER LADO DERECHO -->
+        <div class="col-md-4">
         <h3>My Google Maps Demo</h3>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     	<div id="map"></div>
-        <div class="col-md-3">
           <div class="blockquote">
             <p class="mb-0">Blockquoute</p>
             <div class="blockquote-footer">Someone famous in My memories</div>
@@ -140,5 +121,8 @@
       
     </div>
   </div>
-  
+  <script src="js/mapas.js"></script>
+  <!-- script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"> </script-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete"> </script>
+
   <%@ include file="_footer.jsp" %>
