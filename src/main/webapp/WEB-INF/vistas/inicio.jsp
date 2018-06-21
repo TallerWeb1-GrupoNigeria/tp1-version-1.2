@@ -1,62 +1,71 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="css/estilo-mapa.css" type="text/css">
-  <div class="py-2">
-    <div class="container">
-      <div class="row">
-        
-        <!-- CARROUSEL -->
-        
-        <div class="col-md-6">
-          <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block img-fluid w-100" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg">
-                <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg">
-                <div class="carousel-caption">
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- BANNER LADO DERECHO -->
-        <div class="col-md-4">
-        <h3>My Google Maps Demo</h3>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    	<div id="map"></div>
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-          <div class="blockquote">
-            <p class="mb-0">Blockquoute</p>
-            <div class="blockquote-footer">Someone famous in My memories</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 2 CARDS -->
+	<div class="py-2">
+    	<div class="container">
+			<div class="row">
+
+				<!-- CARROUSEL -->
+
+				<div class="col-md-8">
+					<div id="carousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block img-fluid w-100" src="img/carousel-img1.jpg">
+								<div class="carousel-caption">
+									<h3>First slide label</h3>
+									<p>Duerme todo el día, ve de fiesta toda la noche, nunca envejezcas, nunca mueras.</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block img-fluid w-100" src="img/carousel-img2.jpg">
+								<div class="carousel-caption">
+									<h3>Second slide label</h3>
+									<p>Las aventuras comienzan cuando estás dispuesto a celebrar.</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block img-fluid w-100" src="img/carousel-img3.jpg">
+								<div class="carousel-caption">
+									<h3>Second slide label</h3>
+									<p>Las aventuras comienzan cuando estás dispuesto a celebrar.</p>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> 
+							<span class="carousel-control-prev-icon"></span>
+							<span class="sr-only">Anterior</span>
+						</a> 
+						<a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> 
+							<span class="carousel-control-next-icon"></span>
+							<span class="sr-only">Siguente</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- BANNER LADO DERECHO -->
+				<div class="col-md-4">
+					<h3>Dónde vas a salir hoy ?</h3>
+					<input id="pac-input" class="controls" type="text" placeholder="Bucar...">
+					<div id="map"></div>
+					
+					<div class="blockquote">
+						<p class="mb-0">Blockquoute</p>
+						<div class="blockquote-footer">Someone famous in My memories</div>
+					</div>
+					<div class="blockquote">
+						<p class="mb-0">Blockquoute</p>
+						<div class="blockquote-footer">Someone famous in My memories</div>
+					</div>
+					<div class="blockquote">
+						<p class="mb-0">Blockquoute</p>
+						<div class="blockquote-footer">Someone famous in My memories</div>
+					</div>
+				</div>
+				
+			</div>
+
+		<!-- 2 CARDS -->
       <div class="row py-2">
      
       <c:forEach items="${keyListarEventos}" var="evento">
