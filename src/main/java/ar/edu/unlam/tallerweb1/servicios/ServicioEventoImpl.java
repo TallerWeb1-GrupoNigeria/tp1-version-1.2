@@ -35,5 +35,10 @@ public class ServicioEventoImpl implements ServicioEvento {
 		return eventoDao.buscarEvento(dato);
 	}
 	
+	@Override
+	public Evento buscarEventoPorIdService(Long id) {
+		return eventoDao.buscarEventoPorId(id);
+	}
+	
 	
 }

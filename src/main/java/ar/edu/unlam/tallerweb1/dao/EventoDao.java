@@ -10,5 +10,6 @@ public interface EventoDao {
 	public List<Evento> listaEventos();
 	public void actualizarEvento(Evento evento);
 	public List<Evento> buscarEvento(String dato);
+	public Evento buscarEventoPorId(Long id);
 	
 }

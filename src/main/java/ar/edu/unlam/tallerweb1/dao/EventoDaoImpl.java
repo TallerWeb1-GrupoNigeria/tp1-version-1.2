@@ -53,5 +53,14 @@ public class EventoDaoImpl implements EventoDao{
 		return eventosList;
 	}
 	
+
+	@Transactional
+	@Override
+	public Evento buscarEventoPorId(Long id){
+		Session session = sessionFactory.getCurrentSession();
+		
+		return session.get(Evento.class,id); 
+	}
+	
 	
 }

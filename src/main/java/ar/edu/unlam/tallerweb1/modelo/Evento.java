@@ -21,9 +21,7 @@ public class Evento {
 	private String imagen;
 	private String mostrar;
 	
-	
 
-	
 	public Evento() {
 	}
 

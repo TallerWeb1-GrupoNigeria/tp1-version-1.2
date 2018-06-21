@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-12">
         	<hr />
-          <h1 class="">Menu Admin</h1>
+          <h2 class="text-right">Menu Admin</h2>
         </div>
       </div>
     </div>
@@ -24,10 +24,6 @@
             <li class="nav-item">
               <a href="crearEvento" class="nav-link">
                 <i class="fa fa-magic"></i>&nbsp;Crear Evento</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa fa-repeat"></i>&nbsp;Modificar Evento</a>
             </li>
           </ul>
         </div>
