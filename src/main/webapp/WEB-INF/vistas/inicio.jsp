@@ -1,7 +1,9 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 <link rel="stylesheet" href="css/estilo-mapa.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" defer></script>
 <script src="js/bootstrap-select.min.js" defer></script>
 
 	<div class="py-2">
@@ -92,6 +94,51 @@
 	</div>
 	
 </div>
+<div class="row">
+	  <nav class="navbar navbar-default" role="navigation">
+	    <div class="container-fluid">
+	      <div class="navbar-header">
+	        <a class="navbar-brand" href="#">Navbar</a>
+	      </div>
+	
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+	            <optgroup label="filter1">
+	              <option>option1</option>
+	              <option>option2</option>
+	              <option>option3</option>
+	              <option>option4</option>
+	            </optgroup>
+	            <optgroup label="filter2">
+	              <option>option1</option>
+	              <option>option2</option>
+	              <option>option3</option>
+	              <option>option4</option>
+	            </optgroup>
+	            <optgroup label="filter3">
+	              <option>option1</option>
+	              <option>option2</option>
+	              <option>option3</option>
+	              <option>option4</option>
+	            </optgroup>
+	          </select>
+	        </div>
+	
+	        <div class="input-group">
+	          <input type="text" class="form-control" placeholder="Search" name="q">
+	
+	          <div class="input-group-btn">
+	            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+	          </div>
+	        </div>
+	        <button type="submit" class="btn btn-default">Search</button>
+	      </form>
+	
+	    </div>
+	    <!-- .container-fluid -->
+	  </nav>
+ </div>
 
 <!-- 2 CARDS -->
 <!-- LISTA DE EVENTOS  -->
@@ -159,6 +206,26 @@
       
     </div>
   </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
   <script src="js/mapas.js"></script>
   <!-- script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"> </script-->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete"> </script>
