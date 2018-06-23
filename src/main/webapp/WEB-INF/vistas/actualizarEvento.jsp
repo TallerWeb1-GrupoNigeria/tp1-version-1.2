@@ -6,7 +6,9 @@
  <div class="container" id="contenedor_form">    
 	 
 	  <br />
-	  <form:form action="../actualizarEvento" method="POST" modelAttribute="keyEvento">
+	  <form:form action="validarActualizarEvento" method="POST" modelAttribute="keyEvento">
+	
+	   <form:input path="id" type="hidden" id="id" class="input form-control" placeholder="${ evento.getId() }"/>
 	
 	   <div class="form-group">
 	    <label>Nombre del Evento:</label>

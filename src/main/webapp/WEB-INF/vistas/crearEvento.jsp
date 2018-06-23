@@ -9,8 +9,9 @@
 	  <form:form action="crearEvento" method="POST" modelAttribute="keyEvento">
 	
 	   <div class="form-group">
-	    <label>Nombre del Evento:</label>
+	    <label>Nombre:</label>
 	       <form:input path="nombre" type="text" id="nombre" class="input form-control" />
+	       <small class="form-text text-muted">(Nombre que tendra el evento)</small>
 	   </div>
 	
 	   <div class="form-group">

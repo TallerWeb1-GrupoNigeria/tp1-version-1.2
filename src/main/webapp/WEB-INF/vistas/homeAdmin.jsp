@@ -11,13 +11,13 @@
            
             <thead>
               <tr>
-              	<th>ID</th>
+              	<th>Imagen</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Direccion</th>
-                <th>Imagen</th>
+                <th>ImgSrc</th>
                 <th>Mostrar</th>
                 <th>Acciones</th>
               </tr>
@@ -26,17 +26,19 @@
             <tbody>
             	<c:forEach items="${ keyListarEventos }" var="evento">
             		<tr>
-            			<td>${ evento.getId() }</td>
-		            	<td>${ evento.getNombre() }</td>
-		                <td>${ evento.getDescripcion() }</td>
-		                <td>${ evento.getFecha() }</td>
-		                <td>${ evento.getHora() }</td>
-		                <td>${ evento.getDireccion() }</td>
-		                <td>${ evento.getImagen() }</td>
-		                <td>${ evento.getMostrar() }</td>
-		                <td>
-		                	<a href="actualizarEvento/${ evento.getId() }">Modificar </a>|
-		                	<a href="#">Detalle</a>
+            			<td class="align-middle">
+            				<a href="#" class="thumbnail"><img src="img/${ evento.getImagen() }" alt="miniMagen" width="75" height="auto"></a>
+    					</td>
+		            	<td class="align-middle">${ evento.getNombre() }</td>
+		                <td class="align-middle">${ evento.getDescripcion() }</td>
+		                <td class="align-middle">${ evento.getFecha() }</td>
+		                <td class="align-middle">${ evento.getHora() }</td>
+		                <td class="align-middle">${ evento.getDireccion() }</td>
+		                <td class="align-middle">${ evento.getImagen() }</td>
+		                <td class="align-middle text-center">${ evento.getMostrar() }</td>
+		                <td class="align-middle">
+		                	<a href="actualizarEvento?id=${ evento.getId() }">Modificar </a>|
+		                	<a href="detalleEvento?id=${ evento.getId() }">Detalle</a>
 		                </td>
 	                </tr>
             	</c:forEach>
