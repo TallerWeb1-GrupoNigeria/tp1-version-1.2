@@ -143,33 +143,24 @@
 <!-- 2 CARDS -->
 <!-- LISTA DE EVENTOS  -->
       <div class="row py-2">
-     
-      <c:forEach items="${keyListarEventos}" var="evento">
-        <div class="col-md-4">
-        
-          <div class="card">
-            <img class="card-img-top" src="img/${evento.getImagen()}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">${ evento.getNombre() }</h5>
-              <p class="card-text">${ evento.getDescripcion() }</p>
-              <a href="#" class="btn btn-primary">Ir al Evento</a>
-            </div>
-          </div>
-        </div>
-        
-        </c:forEach>
-        
-        <!-- <div class="col-md-6">
-          <div class="card">
-            <img class="card-img-top" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div> -->
-        
+      	<c:forEach items="${keyListarEventos}" var="evento">
+			
+			<!-- SE AGREGO LA FUNCION IF DE 'SI' PARA MOSTRAR Y 'NO' PARA NO MOSTRAR EL EVENTO -->
+			<c:if test="${ evento.getMostrar() eq 'si' }">
+			 <div class="col-md-4">
+			 
+			   <div class="card">
+			     <img class="card-img-top" src="img/${evento.getImagen()}" alt="Card image cap">
+			     <div class="card-body">
+			       <h5 class="card-title">${ evento.getNombre() }</h5>
+			       <p class="card-text">${ evento.getDescripcion() }</p>
+			       <a href="#" class="btn btn-primary">Ir al Evento</a>
+			     </div>
+			   </div>
+			 </div>
+			</c:if>
+			
+		</c:forEach>
         
       </div>
       
