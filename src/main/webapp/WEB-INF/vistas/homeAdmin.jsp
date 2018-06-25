@@ -11,13 +11,13 @@
            
             <thead>
               <tr>
-              	<th>Imagen</th>
+              	<th>Portada</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Fecha</th>
-                <th>Hora</th>
+                <th>HoraInicio</th>
+                <th>HoraFin</th>
                 <th>Direccion</th>
-                <th>ImgSrc</th>
                 <th>Mostrar</th>
                 <th>Acciones</th>
               </tr>
@@ -27,14 +27,14 @@
             	<c:forEach items="${ keyListarEventos }" var="evento">
             		<tr>
             			<td class="align-middle">
-            				<a href="#" class="thumbnail"><img src="img/${ evento.getImagen() }" alt="miniMagen" width="75" height="auto"></a>
+            				<a href="#" class="thumbnail"><img src="img/${ evento.getImagen1() }" alt="miniMagen" width="75" height="auto"></a>
     					</td>
 		            	<td class="align-middle">${ evento.getNombre() }</td>
 		                <td class="align-middle">${ evento.getDescripcion() }</td>
 		                <td class="align-middle">${ evento.getFecha() }</td>
-		                <td class="align-middle">${ evento.getHora() }</td>
+		                <td class="align-middle">${ evento.getHoraInicio() }</td>
+		                <td class="align-middle">${ evento.getHoraFin() }</td>
 		                <td class="align-middle">${ evento.getDireccion() }</td>
-		                <td class="align-middle">${ evento.getImagen() }</td>
 		                <td class="align-middle text-center">${ evento.getMostrar() }</td>
 		                <td class="align-middle">
 		                	<a href="actualizarEvento?id=${ evento.getId() }">Modificar </a>|
@@ -52,3 +52,6 @@
 
   
  <%@ include file="_footer.jsp" %>
+ 
+ 
+ 

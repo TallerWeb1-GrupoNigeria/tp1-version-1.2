@@ -20,9 +20,17 @@ public class Evento {
 	private String nombre;
 	private String descripcion;
 	private String fecha;
-	private String hora;
+	private String horaInicio; //
+	private String horaFin; //
 	private String direccion;
-	private String imagen;
+	private String telefono; //
+	private String imagen1;
+	private String imagen2;
+	private String imagen3;
+	private String correo;   //
+	private String facebook;
+	private String twitter;
+	private String instagram;
 	private String mostrar;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
@@ -30,38 +38,57 @@ public class Evento {
 	private Localizacion localizacion;
 	
 	
-	
 	// CONSTRUCTORES
 
 	public Evento() {
 	}
-
-	public Evento(String nombre, String descripcion, String fecha, String hora, String direccion, String imagen,
-			String mostrar) {
-
+	
+	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
+			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
+			String twitter, String instagram, String mostrar) {
+		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
-		this.hora = hora;
+		this.horaInicio = horaInicio;
+		this.horaFin = horaFin;
 		this.direccion = direccion;
-		this.imagen = imagen;
+		this.telefono = telefono;
+		this.imagen1 = imagen1;
+		this.imagen2 = imagen2;
+		this.imagen3 = imagen3;
+		this.correo = correo;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.instagram = instagram;
 		this.mostrar = mostrar;
 	}
 	
-	public Evento(Long id, String nombre, String descripcion, String fecha, String hora, String direccion,
-			String imagen, String mostrar, Localizacion localizacion) {
+	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
+			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
+			String twitter, String instagram, String mostrar, Localizacion localizacion) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
-		this.hora = hora;
+		this.horaInicio = horaInicio;
+		this.horaFin = horaFin;
 		this.direccion = direccion;
-		this.imagen = imagen;
+		this.telefono = telefono;
+		this.imagen1 = imagen1;
+		this.imagen2 = imagen2;
+		this.imagen3 = imagen3;
+		this.correo = correo;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.instagram = instagram;
 		this.mostrar = mostrar;
 		this.localizacion = localizacion;
 	}
 
+	
+	// GETS SETS
+	
 	public Long getId() {
 		return id;
 	}
@@ -94,12 +121,20 @@ public class Evento {
 		this.fecha = fecha;
 	}
 
-	public String getHora() {
-		return hora;
+	public String getHoraInicio() {
+		return horaInicio;
 	}
 
-	public void setHora(String hora) {
-		this.hora = hora;
+	public void setHoraInicio(String horaInicio) {
+		this.horaInicio = horaInicio;
+	}
+
+	public String getHoraFin() {
+		return horaFin;
+	}
+
+	public void setHoraFin(String horaFin) {
+		this.horaFin = horaFin;
 	}
 
 	public String getDireccion() {
@@ -110,12 +145,68 @@ public class Evento {
 		this.direccion = direccion;
 	}
 
-	public String getImagen() {
-		return imagen;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getImagen1() {
+		return imagen1;
+	}
+
+	public void setImagen1(String imagen1) {
+		this.imagen1 = imagen1;
+	}
+
+	public String getImagen2() {
+		return imagen2;
+	}
+
+	public void setImagen2(String imagen2) {
+		this.imagen2 = imagen2;
+	}
+
+	public String getImagen3() {
+		return imagen3;
+	}
+
+	public void setImagen3(String imagen3) {
+		this.imagen3 = imagen3;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
+	}
+
+	public String getTwitter() {
+		return twitter;
+	}
+
+	public void setTwitter(String twitter) {
+		this.twitter = twitter;
+	}
+
+	public String getInstagram() {
+		return instagram;
+	}
+
+	public void setInstagram(String instagram) {
+		this.instagram = instagram;
 	}
 
 	public String getMostrar() {
@@ -133,7 +224,7 @@ public class Evento {
 	public void setLocalizacion(Localizacion localizacion) {
 		this.localizacion = localizacion;
 	}
-
 	
+
 	
 }

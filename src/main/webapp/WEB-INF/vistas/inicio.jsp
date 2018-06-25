@@ -150,7 +150,7 @@
 			 <div class="col-md-4">
 			 
 			   <div class="card">
-			     <img class="card-img-top" src="img/${evento.getImagen()}" alt="Card image cap">
+			     <img class="card-img-top" src="img/${evento.getImagen1()}" alt="Card image cap">
 			     <div class="card-body">
 			       <h5 class="card-title">${ evento.getNombre() }</h5>
 			       <p class="card-text">${ evento.getDescripcion() }</p>

@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
-
 <%@ include file="_header.jsp" %>
 <%@ include file="_menuAdmin.jsp" %>
-
 
 
 <div class="py-2">
@@ -15,33 +13,49 @@
 			<form:form class="" modelAttribute="keyEvento">
 			
 				<div class="form-group">
-			    	<h3 class="font-weight-bold">${ keyEvento.getNombre() }</h3>
+			    	<h3 >${ keyEvento.getNombre() }</h3>
 				</div>
 				
-				<table class="table table-striped">
-					<tr>
-						<td>ID:</td>
-						<td class="font-weight-bold">${ keyEvento.getId() }</td>
-					</tr>
+				<table class="table">
 					<tr>
 						<td>Descripcion:</td>
 						<td class="font-weight-bold">${ keyEvento.getDescripcion() }</td>
-					</tr>
-					<tr>
-						<td>Nombre Img:</td>
-						<td class="font-weight-bold">${ keyEvento.getImagen() }</td>
 					</tr>
 					<tr>
 						<td>Fecha:</td>
 						<td class="font-weight-bold">${ keyEvento.getFecha() }</td>
 					</tr>
 					<tr>
-						<td>Hora:</td>
-						<td class="font-weight-bold">${ keyEvento.getHora() }</td>
+						<td>Hora de Inicio:</td>
+						<td class="font-weight-bold">${ keyEvento.getHoraInicio() }</td>
+					</tr>
+					<tr>
+						<td>Hora de Finalizacion:</td>
+						<td class="font-weight-bold">${ keyEvento.getHoraFin() }</td>
 					</tr>
 					<tr>
 						<td>Direccion:</td>
 						<td class="font-weight-bold">${ keyEvento.getDireccion() }</td>
+					</tr>
+					<tr>
+						<td>Telefono:</td>
+						<td class="font-weight-bold">${ keyEvento.getTelefono() }</td>
+					</tr>
+					<tr>
+						<td>Correo:</td>
+						<td class="font-weight-bold">${ keyEvento.getCorreo() }</td>
+					</tr>
+					<tr>
+						<td>Facebook:</td>
+						<td class="font-weight-bold">${ keyEvento.getFacebook() }</td>
+					</tr>
+					<tr>
+						<td>Twitter:</td>
+						<td class="font-weight-bold">${ keyEvento.getTwitter() }</td>
+					</tr>
+					<tr>
+						<td>Instagram:</td>
+						<td class="font-weight-bold">${ keyEvento.getInstagram() }</td>
 					</tr>
 					<tr>
 						<td>Latitud:</td>
@@ -59,12 +73,44 @@
 	  		</form:form>
         
         </div>
-        
-        <div class="col-md-6">
-          	<img class="img-fluid d-block my-2" src="img/${ keyEvento.getImagen() }" alt="imagen_evento">
-		    <!--The div element for the map -->
-		    <div id="map"></div>
-  		</div>
+          	
+			<div class="col-md-6">
+				
+				<!-- CARROUSEL -->
+				<div id="carousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+					
+						<div class="carousel-item active">
+							<img class="d-block img-fluid w-100" src="img/${ keyEvento.getImagen1() }" />
+							<div class="carousel-caption"><h3>IMG 1: ${ keyEvento.getImagen1() }</h3></div>
+						</div>
+
+						<div class="carousel-item">
+							<img class="d-block img-fluid w-100" src="img/${ keyEvento.getImagen2() }" />
+							<div class="carousel-caption"><h3>IMG 2: ${ keyEvento.getImagen2() }</h3></div>
+						</div>
+						
+						<div class="carousel-item">
+							<img class="d-block img-fluid w-100" src="img/${ keyEvento.getImagen3() }" />
+							<div class="carousel-caption"><h3>IMG 3: ${ keyEvento.getImagen3() }</h3></div>
+						</div>
+						
+					</div>
+					
+					<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> 
+						<span class="carousel-control-prev-icon"></span>
+						<span class="sr-only">Anterior</span>
+					</a> 
+					<a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> 
+						<span class="carousel-control-next-icon"></span>
+						<span class="sr-only">Siguente</span>
+					</a>
+				</div>
+			
+			    <!--The div element for the map -->
+			    <div id="map"></div>
+		    
+  			</div>
         
         
         
