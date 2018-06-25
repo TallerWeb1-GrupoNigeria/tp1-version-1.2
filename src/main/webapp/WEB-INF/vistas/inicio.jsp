@@ -1,9 +1,9 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-<link rel="stylesheet" href="css/estilo-mapa.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" defer></script>
+
 <script src="js/bootstrap-select.min.js" defer></script>
 
 	<div class="py-2">

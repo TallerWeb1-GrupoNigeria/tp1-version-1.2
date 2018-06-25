@@ -1,9 +1,13 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Evento {
@@ -21,6 +25,13 @@ public class Evento {
 	private String imagen;
 	private String mostrar;
 	
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
+	@JoinColumn(name="localizacion_id")
+	private Localizacion localizacion;
+	
+	
+	
+	// CONSTRUCTORES
 
 	public Evento() {
 	}
@@ -36,10 +47,21 @@ public class Evento {
 		this.imagen = imagen;
 		this.mostrar = mostrar;
 	}
+	
+	public Evento(Long id, String nombre, String descripcion, String fecha, String hora, String direccion,
+			String imagen, String mostrar, Localizacion localizacion) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.direccion = direccion;
+		this.imagen = imagen;
+		this.mostrar = mostrar;
+		this.localizacion = localizacion;
+	}
 
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -103,11 +125,15 @@ public class Evento {
 	public void setMostrar(String mostrar) {
 		this.mostrar = mostrar;
 	}
-	
-	
-	
-	
-	
+
+	public Localizacion getLocalizacion() {
+		return localizacion;
+	}
+
+	public void setLocalizacion(Localizacion localizacion) {
+		this.localizacion = localizacion;
+	}
+
 	
 	
 }

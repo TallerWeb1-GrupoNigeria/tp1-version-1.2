@@ -14,6 +14,16 @@
 	    <label>Nombre del Evento:</label>
 	       <form:input path="nombre" type="text" id="nombre" class="input form-control" placeholder="${ evento.getNombre() }"/>
 	   </div>
+
+	   <div class="form-group">
+	    <label>Descripcion:</label>
+	       <form:input path="descripcion" type="text" id="descripcion" class="input form-control" placeholder="${ evento.getDescripcion() }"/>
+	   </div>
+
+	    <div class="form-group">
+	    <label>Imagen Principal:</label> 
+	        <form:input path="imagen" type="text" id="imagen" name="imagen" class="input form-control" placeholder="${ evento.getImagen() }"/>
+	    </div> 
 	
 	   <div class="form-group">
 	    <label>Fecha:</label>
@@ -31,14 +41,14 @@
 	   </div>
 	   
 	   <div class="form-group">
-	    <label>Descripcion:</label>
-	       <form:input path="descripcion" type="text" id="descripcion" class="input form-control" placeholder="${ evento.getDescripcion() }"/>
+	    <label>Latitud:</label>
+	       <form:input path="Localizacion.latitud" type="text" id="latitud" class="input form-control"/>
 	   </div>
 	   
-	    <div class="form-group">
-	    <label>Imagen Principal:</label> 
-	        <form:input path="imagen" type="text" id="imagen" name="imagen" class="input form-control" placeholder="${ evento.getImagen() }"/>
-	    </div> 
+	   <div class="form-group">
+	    <label>Longitud:</label>
+	       <form:input path="Localizacion.longitud" type="text" id="longitud" class="input form-control"/>
+	   </div>
 	   
 	   <div class="form-group">
 	    <label>Mostrar:</label>

@@ -5,6 +5,7 @@
 <%@ include file="_menuAdmin.jsp" %>
 
 
+
 <div class="py-2">
     <div class="container">
       <div class="row">
@@ -17,10 +18,18 @@
 			    	<h3 class="font-weight-bold">${ keyEvento.getNombre() }</h3>
 				</div>
 				
-				<table class="table">
+				<table class="table table-striped">
 					<tr>
 						<td>ID:</td>
 						<td class="font-weight-bold">${ keyEvento.getId() }</td>
+					</tr>
+					<tr>
+						<td>Descripcion:</td>
+						<td class="font-weight-bold">${ keyEvento.getDescripcion() }</td>
+					</tr>
+					<tr>
+						<td>Nombre Img:</td>
+						<td class="font-weight-bold">${ keyEvento.getImagen() }</td>
 					</tr>
 					<tr>
 						<td>Fecha:</td>
@@ -35,12 +44,12 @@
 						<td class="font-weight-bold">${ keyEvento.getDireccion() }</td>
 					</tr>
 					<tr>
-						<td>Descripcion:</td>
-						<td class="font-weight-bold">${ keyEvento.getDescripcion() }</td>
+						<td>Latitud:</td>
+						<td class="font-weight-bold">${ keyEvento.localizacion.getLatitud() }</td>
 					</tr>
 					<tr>
-						<td>Nombre Img:</td>
-						<td class="font-weight-bold">${ keyEvento.getImagen() }</td>
+						<td>Longitud:</td>
+						<td class="font-weight-bold">${ keyEvento.localizacion.getLongitud() }</td>
 					</tr>
 					<tr>
 						<td>Mostrar?</td>
@@ -53,19 +62,43 @@
         
         <div class="col-md-6">
           	<img class="img-fluid d-block my-2" src="img/${ keyEvento.getImagen() }" alt="imagen_evento">
-          	<img class="d-block img-fluid" alt="mapa_del_evento" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDW8nO9JhT_pEjebobq9pgUF2cEp0EUb1I&amp;markers=New+York+City&amp;center=New+York+City&amp;zoom=12&amp;size=640x480&amp;sensor=false">
-        </div>
+		    <!--The div element for the map -->
+		    <div id="map"></div>
+  		</div>
+        
+        
+        
+        
       </div>
       <div>
       		<h4><a href="./homeAdmin">Volver a la lista</a></h4>
       </div>
     </div>
   </div>
-  
-  
-  
+
   <br/>
   
+  
 
+	<!-- SCRIPT GOOGLE MAPS API ***************************************************** -->
+	<script>
+		// Initialize and add the map
+		function initMap() {
+	  		// The location of Uluru
+	  		var uluru = {lat: ${ keyEvento.localizacion.getLatitud() }, lng: ${ keyEvento.localizacion.getLongitud() }};
+	  		// The map, centered at Uluru
+	  		var map = new google.maps.Map( document.getElementById('map'), {zoom: 16, center: uluru} );
+	  		// The marker, positioned at Uluru
+	  		var marker = new google.maps.Marker({position: uluru, map: map});
+		}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"></script>
+  	<!--  ***************************************************************************  -->
+  
 
 <%@ include file="_footer.jsp" %>
