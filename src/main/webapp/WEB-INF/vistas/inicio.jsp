@@ -1,7 +1,6 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
 
 <script src="js/bootstrap-select.min.js" defer></script>

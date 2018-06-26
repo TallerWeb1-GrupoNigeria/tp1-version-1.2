@@ -1,5 +1,8 @@
-INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('1', 'evento1', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
-INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('2', 'evento2', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento2.jpg', 'si', 'Hola');
-INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('3', 'evento3', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
-INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('4', 'evento4', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento2.jpg', 'si', 'Hola');
-INSERT INTO `tp`.`evento` (`id`, `descripcion`, `direccion`, `fecha`, `hora`, `imagen`, `mostrar`, `nombre`) VALUES ('5', 'evento5', 'Sanabria 4263, Buenos Aires', '10/05/2012', '15:21', 'imagenEvento1.jpg', 'si', 'Hola');
+/*	       INSERT DE LAS LOCALIZACIONES       */
+INSERT INTO `tp`.`localizacion` (`id`, `latitud`, `longitud`) VALUES ('1', '-34.607034', '-58.375516');
+INSERT INTO `tp`.`localizacion` (`id`, `latitud`, `longitud`) VALUES ('2', '-34.607034', '-58.375516');
+INSERT INTO `tp`.`localizacion` (`id`, `latitud`, `longitud`) VALUES ('3', '-34.607034', '-58.375516');
+INSERT INTO `tp`.`localizacion` (`id`, `latitud`, `longitud`) VALUES ('4', '-34.607034', '-58.375516');
+INSERT INTO `tp`.`localizacion` (`id`, `latitud`, `longitud`) VALUES ('5', '-34.607034', '-58.375516');
+
+/**/

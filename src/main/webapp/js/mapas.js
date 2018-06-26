@@ -87,7 +87,33 @@ function initAutocomplete() {
       } else {
         bounds.extend(place.geometry.location);
       }
+      
     });
+    console.log("place: ",places);
+    console.log("place: ",places[0].formatted_address);
+    console.log("lng: ",places[0].geometry.viewport.b.b);
+    console.log("lat: ",places[0].geometry.viewport.f.f);
+    
+    var data ={
+    		formatted_address : places[0].formatted_address,
+    		lng : places[0].geometry.viewport.b.b,
+    		lat : places[0].geometry.viewport.f.f
+    	
+    };
     map.fitBounds(bounds);
+    
+    $.ajax({
+        type : 'POST',
+        url : 'http://localhost:8082/tp1-version-1.2/inicioHome',
+        contentType: 'application/json',
+        data : data,
+        success : function(data, status, xhr){
+           $("#result").html(data+
+           " link: <a href='"+url+"'>"+url+"</a>");
+        },
+        error: function(xhr, status, error){
+          alert(error);
+        }
+    });
   });
 }
