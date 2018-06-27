@@ -61,7 +61,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Arma tu evento!
+              <a class="nav-link" href="#">| Mis Eventos
                 <br>
               </a>
             </li>
@@ -72,7 +72,7 @@
               <a href="#" class="nav-link">Contacto</a>
             </li>
             <li class="nav-item">
-              <a href="homeAdmin" class="nav-link">*Menu Admin*</a>
+              <a href="homeAdmin" class="nav-link">Menu Admin</a>
             </li>
           </ul>
         </div>
