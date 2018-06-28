@@ -100,20 +100,69 @@ function initAutocomplete() {
     		lat : places[0].geometry.viewport.f.f
     	
     };
+    ajaxPost(data);
+    
     map.fitBounds(bounds);
     
-    $.ajax({
-        type : 'POST',
-        url : 'http://localhost:8082/tp1-version-1.2/inicioHome',
-        contentType: 'application/json',
-        data : data,
-        success : function(data, status, xhr){
-           $("#result").html(data+
-           " link: <a href='"+url+"'>"+url+"</a>");
-        },
-        error: function(xhr, status, error){
-          alert(error);
-        }
-    });
+    
   });
+
 }
+
+function ajaxPost(data){
+	$.ajax({
+    	type : 'POST',
+    	url : 'inicioHome',
+    	contentType: 'application/json',
+    	data : data,
+    	success : function(data, status, xhr){
+    		$("#result").html(data);
+    	},
+    	error: function(xhr, status, error){
+    		alert(error);
+    	}
+	   
+	});
+}
+
+//function ajaxPost(data){
+//	$( document ).ready(function() {
+//		console.log(data);
+//  	$.ajax({
+//			type : "POST",
+//			contentType : "application/json",
+//			url : window.location + "api/customer/save",
+//			data : JSON.stringify(formData),
+//			dataType : 'json',
+//			success : function(result) {
+//				if(result.status == "Done"){
+//					$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
+//												"Post Successfully! <br>" +
+//												"---> Customer's Info: FirstName = " + 
+//												result.data.firstname + " ,LastName = " + result.data.lastname + "</p>");
+//				}else{
+//					$("#postResultDiv").html("<strong>Error</strong>");
+//				}
+//				console.log(result);
+//			},
+//			error : function(e) {
+//				alert("Error!")
+//				console.log("ERROR: ", e);
+//			}
+//  	    	type : 'POST',
+//  	    	url : 'inicioHome',
+//  	    	contentType: 'application/json',
+//  	    	data :data,
+//  	    	success : function(data, status, xhr){
+//  	    		$("#result").html(data);
+//  	    	},
+//  	    	error: function(xhr, status, error){
+//  	    		alert(error);
+//  	    	}
+//  	   
+//		});
+//  	
+//
+//  })
+//}
+
