@@ -30,7 +30,7 @@ public class ServicioCarritoImpl implements ServicioCarrito {
 	
 	
 	@Override
-	public List<Carrito> listarEventosDelCarritoService() {
+	public List<Evento> listarEventosDelCarritoService() {
 		return carritoDao.listarEventosDelCarrito();
 	}
 	
@@ -38,7 +38,6 @@ public class ServicioCarritoImpl implements ServicioCarrito {
 	public void quitarEventoDelCarritoService(Carrito carrito, Evento evento) {
 		carritoDao.quitarEventoDelCarrito(carrito, evento);
 	}
-	
 
 	
 	

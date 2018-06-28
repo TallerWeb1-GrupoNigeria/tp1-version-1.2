@@ -46,24 +46,24 @@ public class CarritoDaoImpl implements CarritoDao {
 	// LISTAR CARRITO
 	@Transactional
 	@Override
-	public List<Carrito> listarEventosDelCarrito(){
+	public List<Evento> listarEventosDelCarrito(){
 		Session session = sessionFactory.getCurrentSession();
-		List<Carrito> resultado = session.createCriteria(Carrito.class).list();
+		List<Evento> resultado = session.createCriteria(Evento.class).list();
 		return resultado;
 	}
 	
 	
 	// QUITAR EVENTO DEL CARRITO
-		@Transactional
-		@Override
-		public void quitarEventoDelCarrito(Carrito carrito, Evento evento) {
-			Session session = sessionFactory.getCurrentSession();
-			
-			List<Evento> eventoQuitado = new ArrayList<Evento>();
-			eventoQuitado.remove(evento);
-			carrito.setEvento(eventoQuitado);
-			session.save(carrito);
-		}
+	@Transactional
+	@Override
+	public void quitarEventoDelCarrito(Carrito carrito, Evento evento) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		List<Evento> eventoQuitado = new ArrayList<Evento>();
+		eventoQuitado.remove(evento);
+		carrito.setEvento(eventoQuitado);
+		session.save(carrito);
+	}
 
 	
 	

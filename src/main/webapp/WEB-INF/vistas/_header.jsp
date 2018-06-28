@@ -61,9 +61,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">| Mis Eventos
+              <a class="nav-link" href="misEventos">| Mis Eventos
                 <br>
-              </a>
+      		  </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Nosotros</a>

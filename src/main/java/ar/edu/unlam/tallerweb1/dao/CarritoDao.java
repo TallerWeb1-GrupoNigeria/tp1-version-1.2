@@ -9,7 +9,7 @@ public interface CarritoDao {
 
 	public void crearCarrito(Carrito carrito);
 	public void agregarEventoAlCarrito(Carrito carrito, Evento evento);
-	public List<Carrito> listarEventosDelCarrito();
+	public List<Evento> listarEventosDelCarrito();
 	public void quitarEventoDelCarrito(Carrito carrito, Evento evento);
 	
 }

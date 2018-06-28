@@ -9,7 +9,7 @@ public interface ServicioCarrito {
 
 	public void crearCarritoService(Carrito carrito);
 	public void agregarEventoAlCarritoService(Carrito carrito, Evento evento);
-	public List<Carrito> listarEventosDelCarritoService();
+	public List<Evento> listarEventosDelCarritoService();
 	public void quitarEventoDelCarritoService(Carrito carrito, Evento evento);
 	
 }

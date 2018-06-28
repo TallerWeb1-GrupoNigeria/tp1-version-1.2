@@ -154,7 +154,7 @@
 			       <h5 class="card-title">${ evento.getNombre() }</h5>
 			       <p class="card-text">${ evento.getDescripcion() }</p>
 			       <a href="#" class="btn btn-primary">+ Detalles </a>&nbsp;&nbsp;&nbsp;&nbsp;
-			       <a href="#" class="btn btn-success">Agregar</a>
+			       <a href="agregarEventoAlCarrito?id=${ evento.getId() }" class="btn btn-success">Agregar</a>
 			     </div>
 			   </div>
 			 </div>
