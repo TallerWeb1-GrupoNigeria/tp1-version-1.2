@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -38,6 +39,12 @@ public class Evento {
 	private Localizacion localizacion;
 	
 	
+	@ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@JoinColumn(name="evento_id")
+	private Carrito carrito;
+	
+	
+	
 	// CONSTRUCTORES
 
 	public Evento() {
@@ -46,7 +53,7 @@ public class Evento {
 	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
 			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
 			String twitter, String instagram, String mostrar) {
-		super();
+	
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
@@ -64,10 +71,11 @@ public class Evento {
 		this.mostrar = mostrar;
 	}
 	
+	
 	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
 			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
-			String twitter, String instagram, String mostrar, Localizacion localizacion) {
-		super();
+			String twitter, String instagram, String mostrar, Localizacion localizacion, Carrito carrito) {
+	
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
@@ -84,10 +92,12 @@ public class Evento {
 		this.instagram = instagram;
 		this.mostrar = mostrar;
 		this.localizacion = localizacion;
+		this.carrito = carrito;
 	}
 
 	
-	// GETS SETS
+	
+	// getters setters
 	
 	public Long getId() {
 		return id;
@@ -224,7 +234,17 @@ public class Evento {
 	public void setLocalizacion(Localizacion localizacion) {
 		this.localizacion = localizacion;
 	}
-	
 
+	public Carrito getCarrito() {
+		return carrito;
+	}
+
+	public void setCarrito(Carrito carrito) {
+		this.carrito = carrito;
+	}
+
+	
+	
+	
 	
 }

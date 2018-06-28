@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unlam.tallerweb1.modelo.Evento;
 import ar.edu.unlam.tallerweb1.modelo.UbicacionJson;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvento;
 
