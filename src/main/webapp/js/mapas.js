@@ -116,7 +116,9 @@ function ajaxPost(data){
     	contentType: 'application/json',
     	data : data,
     	success : function(data, status, xhr){
-    		$("#result").html(data);
+//    		$("#resultados").html(data);
+    		console.info(data);
+    		
     	},
     	error: function(xhr, status, error){
     		alert(error);

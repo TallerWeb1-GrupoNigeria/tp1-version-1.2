@@ -52,7 +52,7 @@
 					<h3>Dónde vas a salir hoy ?</h3>
 					<input id="pac-input" class="controls" type="text" placeholder="Bucar...">
 					<div id="map"></div>
-					<div id="result"></div>
+					<div id="resultados"></div>
 					<!--div class="blockquote">
 						<p class="mb-0">Blockquoute</p>
 						<div class="blockquote-footer">Someone famous in My memories</div>
