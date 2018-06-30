@@ -5,9 +5,27 @@ public class Persona {
 	private String  ape;
 	private int edad;
 	
+	
+	// contructores
+	
+	public Persona() {
+		super();
+	}
+	
+
+	public Persona(String nom, String ape, int edad) {
+		super();
+		this.nom = nom;
+		this.ape = ape;
+		this.edad = edad;
+	}
+
+
+
 	public String getNom() {
 		return nom;
 	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -23,6 +41,8 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
+	public int sumaEdad() {
+		return this.edad+1;
+	}
 	
 }
