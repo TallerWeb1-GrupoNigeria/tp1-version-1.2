@@ -41,8 +41,15 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	
 	public int sumaEdad() {
-		return this.edad+1;
+		int resultado  = this.edad+1;
+		return resultado;
 	}
 	
+	public static void testPersona() {
+		Persona p1= new Persona("Rober", "ape", 21);
+		System.out.println(p1.getApe() +", "+ p1.getNom());
+		
+	}
 }
