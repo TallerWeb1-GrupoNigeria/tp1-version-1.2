@@ -217,8 +217,5 @@
     });
   });
 </script>
-  <script src="js/mapas.js"></script>
-  <!-- script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&callback=initMap"> </script-->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete"> </script>
-
+  
   <%@ include file="_footer.jsp" %>

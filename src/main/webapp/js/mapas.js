@@ -116,14 +116,9 @@ function ajaxPost(data){
     	contentType: 'application/json',
     	data : data,
     	success : function(data, status, xhr){
-<<<<<<< HEAD
-    		$("#resultados").html(data);
-//    		console.info(data);
-=======
 //    		$("#resultados").html(data);
-    		console.info(data);
->>>>>>> branch 'master' of https://github.com/TallerWeb1-GrupoNigeria/tp1-version-1.2.git
-    		
+//    		console.info(data);
+	
     	},
     	error: function(xhr, status, error){
     		alert(error);
