@@ -1,7 +1,6 @@
 <%@ include file="_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
 
 <script src="js/bootstrap-select.min.js" defer></script>
@@ -53,7 +52,7 @@
 					<h3>Dónde vas a salir hoy ?</h3>
 					<input id="pac-input" class="controls" type="text" placeholder="Bucar...">
 					<div id="map"></div>
-					
+					<div id="resultados"></div>
 					<!--div class="blockquote">
 						<p class="mb-0">Blockquoute</p>
 						<div class="blockquote-footer">Someone famous in My memories</div>
@@ -154,7 +153,8 @@
 			     <div class="card-body">
 			       <h5 class="card-title">${ evento.getNombre() }</h5>
 			       <p class="card-text">${ evento.getDescripcion() }</p>
-			       <a href="#" class="btn btn-primary">Ir al Evento</a>
+			       <a href="#" class="btn btn-primary">+ Detalles </a>&nbsp;&nbsp;&nbsp;&nbsp;
+			       <a href="agregarEventoAlCarrito?id=${ evento.getId() }" class="btn btn-success">Agregar</a>
 			     </div>
 			   </div>
 			 </div>

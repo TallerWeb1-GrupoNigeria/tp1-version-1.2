@@ -117,7 +117,9 @@
         
       </div>
       <div>
-      		<h4><a href="./homeAdmin">Volver a la lista</a></h4>
+      		<h4><a href=<c:url value="homeAdmin" /> >Volver a la lista</a></h4>
+      		<!-- tambien funciona asi: <h4><a href="./homeAdmin">Volver a la lista</a></h4> -->
+      		
       </div>
     </div>
   </div>
