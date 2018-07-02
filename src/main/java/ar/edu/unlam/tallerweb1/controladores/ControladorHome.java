@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unlam.tallerweb1.modelo.Evento;
 import ar.edu.unlam.tallerweb1.modelo.UbicacionJson;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvento;
 
@@ -42,7 +43,10 @@ public class ControladorHome {
 		
 //		ModelMap model = new ModelMap();
 //		model.put("keyListarEventos", servicioEvento.listarEventosService());
-//	
+//		
+		Evento e1 = new Evento("evento json", "", "20/12/2019", "12:00", "02:00", null,null , null, null, null, null, null, null, null, "si");
+		
+		System.out.println("dire:"+ubicacion.getFormatted_address());
 		return new ModelAndView ("inicio",new ModelMap());
 	}
 

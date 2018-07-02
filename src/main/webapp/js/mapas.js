@@ -112,16 +112,18 @@ function initAutocomplete() {
 function ajaxPost(data){
 	$.ajax({
     	type : 'POST',
-    	url : 'inicioHome',
+    	url : 'inicioHome2',
     	contentType: 'application/json',
-    	data : data,
+    	data : JSON.stringify(data),
     	success : function(data, status, xhr){
-//    		$("#resultados").html(data);
-//    		console.info(data);
+    		console.info(data);
+    		console.log(status);
+    		console.log(xhr);
 	
     	},
-    	error: function(xhr, status, error){
-    		alert(error);
+    	error: function(error){
+    		console.log("ERROR: ", error);
+    	
     	}
 	   
 	});
