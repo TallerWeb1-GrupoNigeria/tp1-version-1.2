@@ -73,74 +73,16 @@
 			</div>
 <!-- ESACIO DEL FILTRO  -->
 <div class="row">
-	<div class="col-md-4">
-		<select class="selectpicker">
-		  <option title="Combo 1">Hot Dog, Fries and a Soda</option>
-		  <option title="Combo 2">Burger, Shake and a Smile</option>
-		  <option title="Combo 3">Sugar, Spice and all things nice</option>
-		</select>
-	</div>
-	<div class="col-md-4">
-		<select class="selectpicker" multiple title="Choose one of the following...">
-		  <option>Mustard</option>
-		  <option>Ketchup</option>
-		  <option>Relish</option>
-		</select>
-	</div>
-	<div class="col-md-4">
-		<select class="selectpicker" multiple data-selected-text-format="count">
-		  <option>Mustard</option>
-		  <option>Ketchup</option>
-		  <option>Relish</option>
-		</select>
-	</div>
-	
+
+			<form:form action="filtros-Busqueda" method="POST"
+				modelAttribute="evento">
+				<p>Buscar Evento por nombre</p>
+				<form:input path="nombre" type="text" id="nomb" class="form-control" />
+				<br />
+				<button class="btn btn-lg btn-primary btn-block" Type="Submit">Buscar</button>
+			</form:form>
+
 </div>
-<div class="row">
-	  <nav class="navbar navbar-default" role="navigation">
-	    <div class="container-fluid">
-	      <div class="navbar-header">
-	        <a class="navbar-brand" href="#">Navbar</a>
-	      </div>
-	
-	      <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
-	            <optgroup label="filter1">
-	              <option>option1</option>
-	              <option>option2</option>
-	              <option>option3</option>
-	              <option>option4</option>
-	            </optgroup>
-	            <optgroup label="filter2">
-	              <option>option1</option>
-	              <option>option2</option>
-	              <option>option3</option>
-	              <option>option4</option>
-	            </optgroup>
-	            <optgroup label="filter3">
-	              <option>option1</option>
-	              <option>option2</option>
-	              <option>option3</option>
-	              <option>option4</option>
-	            </optgroup>
-	          </select>
-	        </div>
-	
-	        <div class="input-group">
-	          <input type="text" class="form-control" placeholder="Search" name="q">
-	
-	          <div class="input-group-btn">
-	            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-	          </div>
-	        </div>
-	        <button type="submit" class="btn btn-default">Search</button>
-	      </form>
-	
-	    </div>
-	    <!-- .container-fluid -->
-	  </nav>
- </div>
 
 <!-- 2 CARDS -->
 <!-- LISTA DE EVENTOS  -->

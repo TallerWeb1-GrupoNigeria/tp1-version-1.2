@@ -31,8 +31,8 @@ public class ServicioEventoImpl implements ServicioEvento {
 	}
 	
 	@Override
-	public List<Evento> buscarEventosService(String dato) {
-		return eventoDao.buscarEvento(dato);
+	public List<Evento> buscarEventosService(String ParametroNombre) {
+		return eventoDao.buscarEvento(ParametroNombre);
 	}
 	
 	@Override

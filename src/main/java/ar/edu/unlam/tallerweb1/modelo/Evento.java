@@ -285,6 +285,13 @@ public class Evento {
 		this.tipoEstablecimiento = tipoEstablecimiento;
 	}
 
+	public Costo getCostoClasiicacion() {
+		return costoClasicacion;
+	}
+
+	public void setCostoClasiicacion(Costo costoClasiicacion) {
+		this.costoClasicacion = costoClasiicacion;
+	}
 	public Costo getCostoClasicacion() {
 		return costoClasicacion;
 	}
