@@ -33,6 +33,17 @@ public class Evento {
 	private String twitter;
 	private String instagram;
 	private String mostrar;
+	private String[] etiqueta;
+	private Double precio;
+	
+	@ManyToOne
+	private Prestacion prestacion;
+	
+	@ManyToOne
+	private TipoEstablecimiento tipoEstablecimiento;
+	
+	@ManyToOne
+	private Costo costoClasicacion;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
 	@JoinColumn(name="localizacion_id")
@@ -241,6 +252,45 @@ public class Evento {
 
 	public void setCarrito(Carrito carrito) {
 		this.carrito = carrito;
+	}
+	public String[] getEtiqueta() {
+		return etiqueta;
+	}
+
+	public void setEtiqueta(String[] etiqueta) {
+		this.etiqueta = etiqueta;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Prestacion getPrestacion() {
+		return prestacion;
+	}
+
+	public void setPrestacion(Prestacion prestacion) {
+		this.prestacion = prestacion;
+	}
+
+	public TipoEstablecimiento getTipoEstablecimiento() {
+		return tipoEstablecimiento;
+	}
+
+	public void setTipoEstablecimiento(TipoEstablecimiento tipoEstablecimiento) {
+		this.tipoEstablecimiento = tipoEstablecimiento;
+	}
+
+	public Costo getCostoClasicacion() {
+		return costoClasicacion;
+	}
+
+	public void setCostoClasicacion(Costo costoClasicacion) {
+		this.costoClasicacion = costoClasicacion;
 	}
 
 	

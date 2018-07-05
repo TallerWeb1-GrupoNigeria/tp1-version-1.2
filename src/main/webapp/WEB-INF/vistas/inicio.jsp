@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
 
 <script src="js/bootstrap-select.min.js" defer></script>
+<script src="js/mapas.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete"> </script>
+
 
 	<div class="py-2">
     	<div class="container">

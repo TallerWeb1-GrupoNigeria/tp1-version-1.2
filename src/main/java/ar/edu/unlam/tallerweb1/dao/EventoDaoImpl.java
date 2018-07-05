@@ -46,10 +46,10 @@ public class EventoDaoImpl implements EventoDao{
 	
 	@Transactional
 	@Override
-	public List<Evento> buscarEvento(String data) {
+	public List<Evento> buscarEvento(String ParametroNombre) {
 		Session session = sessionFactory.getCurrentSession();
 		List<Evento> eventosList = session.createCriteria(Evento.class)
-									.add(Restrictions.like("nombreEvento", "%"+data+"%")).list();
+									.add(Restrictions.like("nombre", "%"+ParametroNombre+"%")).list();
 		return eventosList;
 	}
 	

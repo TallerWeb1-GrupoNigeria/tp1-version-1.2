@@ -9,7 +9,7 @@ public interface EventoDao {
 	public void crearEvento(Evento evento);
 	public List<Evento> listaEventos();
 	public void actualizarEvento(Evento evento);
-	public List<Evento> buscarEvento(String dato);
+	public List<Evento> buscarEvento(String ParametroNombre);
 	public Evento buscarEventoPorId(Long id);
 	
 }

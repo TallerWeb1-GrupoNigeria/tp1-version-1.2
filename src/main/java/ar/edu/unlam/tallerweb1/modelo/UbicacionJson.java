@@ -6,6 +6,7 @@ public class UbicacionJson {
 	private long longitud;
 	
 	
+	
 	public UbicacionJson() {
 		super();
 	}
