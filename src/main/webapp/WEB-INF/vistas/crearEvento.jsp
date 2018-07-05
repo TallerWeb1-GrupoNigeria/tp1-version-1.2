@@ -3,6 +3,8 @@
 <%@ include file="_menuAdmin.jsp" %>
 <script src="js/mapas2.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete" async defer></script>
+    
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
  <div class="container" id="contenedor_form">    
 	 

@@ -25,7 +25,7 @@ public class ControladorMapa {
 //		ModelMap model = new ModelMap();
 //		model.put("keyListarEventos", servicioEvento.listarEventosService());
 //		
-		Evento e1 = new Evento("evento json", "", "20/12/2019", "12:00", "02:00", null,null , null, null, null, null, null, null, null, "si");
+//		Evento e1 = new Evento("evento json", "", "20/12/2019", "12:00", "02:00", null,null , null, null, null, null, null, null, null, null , null, "si");
 		
 		System.out.println("dire:"+ubicacion.getFormatted_address());
 		return new ModelAndView ("inicio",new ModelMap());

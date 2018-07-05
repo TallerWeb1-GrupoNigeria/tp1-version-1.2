@@ -21,14 +21,14 @@ public class Evento {
 	private String nombre;
 	private String descripcion;
 	private String fecha;
-	private String horaInicio; //
-	private String horaFin; //
-	private String direccion;
-	private String telefono; //
+	private String horaInicio;
+	private String horaFin; 
+	// private String direccion;
+	private String telefono; 
 	private String imagen1;
 	private String imagen2;
 	private String imagen3;
-	private String correo;   //
+	private String correo;   
 	private String facebook;
 	private String twitter;
 	private String instagram;
@@ -39,11 +39,14 @@ public class Evento {
 	@ManyToOne
 	private Prestacion prestacion;
 	
+	
 	@ManyToOne
 	private TipoEstablecimiento tipoEstablecimiento;
 	
+	
 	@ManyToOne
 	private Costo costoClasicacion;
+	
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
 	@JoinColumn(name="localizacion_id")
@@ -55,22 +58,29 @@ public class Evento {
 	private Carrito carrito;
 	
 	
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
+	@JoinColumn(name="direccion_id")
+	private Direccion direccion;
+	
 	
 	// CONSTRUCTORES
 
 	public Evento() {
+
 	}
 	
-	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
-			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
-			String twitter, String instagram, String mostrar) {
 	
+	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String telefono,
+			String imagen1, String imagen2, String imagen3, String correo, String facebook, String twitter,
+			String instagram, String mostrar, String[] etiqueta, Double precio, Prestacion prestacion,
+			TipoEstablecimiento tipoEstablecimiento, Costo costoClasicacion, Localizacion localizacion, Carrito carrito,
+			Direccion direccion) {
+		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
 		this.horaInicio = horaInicio;
 		this.horaFin = horaFin;
-		this.direccion = direccion;
 		this.telefono = telefono;
 		this.imagen1 = imagen1;
 		this.imagen2 = imagen2;
@@ -80,36 +90,20 @@ public class Evento {
 		this.twitter = twitter;
 		this.instagram = instagram;
 		this.mostrar = mostrar;
-	}
-	
-	
-	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String direccion,
-			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
-			String twitter, String instagram, String mostrar, Localizacion localizacion, Carrito carrito) {
-	
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.fecha = fecha;
-		this.horaInicio = horaInicio;
-		this.horaFin = horaFin;
-		this.direccion = direccion;
-		this.telefono = telefono;
-		this.imagen1 = imagen1;
-		this.imagen2 = imagen2;
-		this.imagen3 = imagen3;
-		this.correo = correo;
-		this.facebook = facebook;
-		this.twitter = twitter;
-		this.instagram = instagram;
-		this.mostrar = mostrar;
+		this.etiqueta = etiqueta;
+		this.precio = precio;
+		this.prestacion = prestacion;
+		this.tipoEstablecimiento = tipoEstablecimiento;
+		this.costoClasicacion = costoClasicacion;
 		this.localizacion = localizacion;
 		this.carrito = carrito;
+		this.direccion = direccion;
 	}
 
 	
+	// GETS SETS
 	
-	// getters setters
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -156,14 +150,6 @@ public class Evento {
 
 	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
 	}
 
 	public String getTelefono() {
@@ -238,21 +224,6 @@ public class Evento {
 		this.mostrar = mostrar;
 	}
 
-	public Localizacion getLocalizacion() {
-		return localizacion;
-	}
-
-	public void setLocalizacion(Localizacion localizacion) {
-		this.localizacion = localizacion;
-	}
-
-	public Carrito getCarrito() {
-		return carrito;
-	}
-
-	public void setCarrito(Carrito carrito) {
-		this.carrito = carrito;
-	}
 	public String[] getEtiqueta() {
 		return etiqueta;
 	}
@@ -285,13 +256,6 @@ public class Evento {
 		this.tipoEstablecimiento = tipoEstablecimiento;
 	}
 
-	public Costo getCostoClasiicacion() {
-		return costoClasicacion;
-	}
-
-	public void setCostoClasiicacion(Costo costoClasiicacion) {
-		this.costoClasicacion = costoClasiicacion;
-	}
 	public Costo getCostoClasicacion() {
 		return costoClasicacion;
 	}
@@ -300,8 +264,35 @@ public class Evento {
 		this.costoClasicacion = costoClasicacion;
 	}
 
-	
-	
+
+	public Localizacion getLocalizacion() {
+		return localizacion;
+	}
+
+
+	public void setLocalizacion(Localizacion localizacion) {
+		this.localizacion = localizacion;
+	}
+
+
+	public Carrito getCarrito() {
+		return carrito;
+	}
+
+
+	public void setCarrito(Carrito carrito) {
+		this.carrito = carrito;
+	}
+
+
+	public Direccion getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
 	
 	
 }
