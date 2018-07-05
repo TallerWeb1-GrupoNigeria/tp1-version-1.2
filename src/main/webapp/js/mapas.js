@@ -115,11 +115,8 @@ function ajaxPost(data){
     	url : 'inicioHome2',
     	contentType: 'application/json',
     	data : JSON.stringify(data),
-<<<<<<< HEAD
     	success : function(data, status, xhr){
-=======
-    	success : function(data, status, xhr){
->>>>>>> 72799d1829479f0a77d9f867ea3debaa01e177e0
+
     		console.info(data);
     		console.log(status);
     		console.log(xhr);

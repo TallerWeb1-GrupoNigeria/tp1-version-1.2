@@ -72,17 +72,12 @@
 				
 			</div>
 <!-- ESACIO DEL FILTRO  -->
-<div class="row">
-
-			<form:form action="filtros-Busqueda" method="POST"
-				modelAttribute="evento">
-				<p>Buscar Evento por nombre</p>
-				<form:input path="nombre" type="text" id="nomb" class="form-control" />
-				<br />
-				<button class="btn btn-lg btn-primary btn-block" Type="Submit">Buscar</button>
-			</form:form>
-
-</div>
+<form:form action="filtros-Busqueda" method="POST" modelAttribute="evento">
+  <p>Buscar Evento por nombre</p>
+	<form:input path="nombre" type="text" id="nomb" class="form-control"/>     		  
+	<br/>
+	<button class="btn btn-lg btn-primary btn-block" Type="Submit">Buscar</button>
+</form:form>
 
 <!-- 2 CARDS -->
 <!-- LISTA DE EVENTOS  -->
@@ -142,25 +137,5 @@
       
     </div>
   </div>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var mySelect = $('#first-disabled2');
 
-    $('#special').on('click', function () {
-      mySelect.find('option:selected').prop('disabled', true);
-      mySelect.selectpicker('refresh');
-    });
-
-    $('#special2').on('click', function () {
-      mySelect.find('option:disabled').prop('disabled', false);
-      mySelect.selectpicker('refresh');
-    });
-
-    $('#basic2').selectpicker({
-      liveSearch: true,
-      maxOptions: 1
-    });
-  });
-</script>
-  
   <%@ include file="_footer.jsp" %>
