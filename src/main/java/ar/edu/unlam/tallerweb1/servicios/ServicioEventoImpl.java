@@ -41,9 +41,12 @@ public class ServicioEventoImpl implements ServicioEvento {
 		return eventoDao.buscarEventoPorId(id);
 	}
 
+	
 	public void agregarUsuarioAEventoService(Evento evento, Usuario usuario) {
 		eventoDao.agregarUsuarioAEvento(evento, usuario);
 	}
+	
+	
 	
 	
 }

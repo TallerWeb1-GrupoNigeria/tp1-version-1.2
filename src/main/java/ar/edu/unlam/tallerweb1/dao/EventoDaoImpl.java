@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.modelo.Evento;
@@ -64,17 +65,17 @@ public class EventoDaoImpl implements EventoDao{
 		
 		return session.get(Evento.class,id); 
 	}
-
+	
+	
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	@Override
 	public void agregarUsuarioAEvento(Evento evento, Usuario usuario) {
 		Session session = sessionFactory.getCurrentSession();
-
+		
 		Set<Usuario> usuarioAgregado = new HashSet<Usuario>();
 		usuarioAgregado.add(usuario);
 		evento.setUsuarios(usuarioAgregado);
 		session.save(evento);
-		
 	}
-	
 	
 }

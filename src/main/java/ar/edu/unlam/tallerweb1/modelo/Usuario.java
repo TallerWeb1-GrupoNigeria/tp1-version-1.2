@@ -29,25 +29,25 @@ public class Usuario {
 	private String repassword;
 	private String rol;
 	
+/*	@OneToOne(mappedBy="usuario")		// RELACION CON CARRITO
+	private Carrito carrito;*/
+
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "usuarios")  
 	private Set<Evento> eventos = new HashSet<Evento>();
-	
-	
+
 	public Usuario() {
 	}
 	
-	public Usuario(String nombre, String email, String password, String repassword, String rol) {
+	public Usuario(Long id, String nombre, String email, String password, String repassword, String rol) {
+		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
 		this.repassword = repassword;
 		this.rol = rol;
 	}
-	
-	public Usuario(long id,String nombre, String email, String password, String repassword, String rol,
-			Set<Evento> eventos) {
-		super();
-		this.id=id;
+
+	public Usuario(String nombre, String email, String password, String repassword, String rol, Set<Evento> eventos) {
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
@@ -107,10 +107,10 @@ public class Usuario {
 	public Set<Evento> getEventos() {
 		return eventos;
 	}
-		
+
 	public void setEventos(Set<Evento> eventos) {
 		this.eventos = eventos;
 	}
-	
+
 	
 }
