@@ -1,20 +1,23 @@
 package ar.edu.unlam.tallerweb1.dao;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.modelo.Evento;
+import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 
 @SuppressWarnings("unchecked")
-@Service
+@Repository("EventoDao")
 public class EventoDaoImpl implements EventoDao{
 
 	@Inject
@@ -60,6 +63,17 @@ public class EventoDaoImpl implements EventoDao{
 		Session session = sessionFactory.getCurrentSession();
 		
 		return session.get(Evento.class,id); 
+	}
+
+	@Override
+	public void agregarUsuarioAEvento(Evento evento, Usuario usuario) {
+		Session session = sessionFactory.getCurrentSession();
+
+		Set<Usuario> usuarioAgregado = new HashSet<Usuario>();
+		usuarioAgregado.add(usuario);
+		evento.setUsuarios(usuarioAgregado);
+		session.save(evento);
+		
 	}
 	
 	

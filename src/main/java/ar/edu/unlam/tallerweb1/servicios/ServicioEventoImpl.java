@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unlam.tallerweb1.dao.EventoDao;
 import ar.edu.unlam.tallerweb1.modelo.Evento;
+import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 @Service
 public class ServicioEventoImpl implements ServicioEvento {
@@ -31,13 +32,17 @@ public class ServicioEventoImpl implements ServicioEvento {
 	}
 	
 	@Override
-	public List<Evento> buscarEventosService(String ParametroNombre) {
-		return eventoDao.buscarEvento(ParametroNombre);
+	public List<Evento> buscarEventosService(String dato) {
+		return eventoDao.buscarEvento(dato);
 	}
 	
 	@Override
 	public Evento buscarEventoPorIdService(Long id) {
 		return eventoDao.buscarEventoPorId(id);
+	}
+
+	public void agregarUsuarioAEventoService(Evento evento, Usuario usuario) {
+		eventoDao.agregarUsuarioAEvento(evento, usuario);
 	}
 	
 	

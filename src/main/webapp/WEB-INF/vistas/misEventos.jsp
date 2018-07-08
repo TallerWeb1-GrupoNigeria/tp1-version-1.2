@@ -11,23 +11,23 @@
            
             <thead>
               <tr>
-              	<th>ID</th>
-                <th>EVENTO</th>
-                <th>ACCIONES</th>
+              	<th>Id Carrito</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
                 
 
               </tr>
             </thead>
             
             <tbody>
-            	<c:forEach items="${ keyListadoEventos }" var="evento">
+            	<c:forEach items="${ keyListadoEventos }" var="carrito">
             		<tr>
   
-		            	<td class="align-middle">${ evento.getId() }</td>
-		                <td class="align-middle">${ evento.getNombre() }</td>
+		            	<td class="align-middle">${ carrito.getId() }</td>
+		                <td class="align-middle">${ carrito.usuario.getId() }</td>
 		                <td class="align-middle">
-		                	<a href="detalleEvento?id=${ evento.getId() }">Detalle</a>
-		                	<a href="quitarEvento?id=${ evento.getId() }">Quitar </a>|
+		                	<a href="detalleEvento?id=${ carrito.getId() }">Detalle</a>
+		                	<a href="quitarEvento?id=${ carrito.getId() }">Quitar </a>|
 		                </td>
 	                </tr>
             	</c:forEach>

@@ -56,18 +56,13 @@ function fillInAddress() {
       }
     
     map.fitBounds(bounds);
-   
-    var data ={
-    		formatted_address : place.formatted_address,
-    		lng : place.geometry.viewport.b.b,
-    		lat : place.geometry.viewport.f.f
-    	
-    };
+    
+    
     for (var component in componentForm) {
       document.getElementById(component).value = '';
       document.getElementById(component).disabled = false;
     }
-    ajaxPost(data);
+    
 
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
@@ -78,6 +73,20 @@ function fillInAddress() {
         document.getElementById(addressType).value = val;
       }
     }
+    var data ={
+		formatted_address : place.formatted_address,
+		lng : place.geometry.viewport.b.b,
+		lat : place.geometry.viewport.f.f,	
+		street_number 				: componentForm[street_number] == undefined? '':componentForm[street_number],
+		route 						: componentForm[route]== undefined? '':componentForm[route],
+		locality 					: componentForm[locality]== undefined? '':componentForm[locality],
+		administrative_area_level_1 : componentForm[administrative_area_level_1]== undefined? '':componentForm[administrative_area_level_1],
+		country 					: componentForm[country]== undefined? '':componentForm[country],
+		postal_code 				: componentForm[postal_code]== undefined? '':componentForm[postal_code]
+    };
+    
+    console.log(data);
+    ajaxPost(data);
 }
 
 
@@ -99,17 +108,48 @@ function fillInAddress() {
       });
     }
   }
+function validaDireccion() {
+	var address = $('#address').val();
+    // Creamos el Objeto Geocoder
+    var geocoder = new google.maps.Geocoder();
+    // Hacemos la petición indicando la dirección e invocamos la función
+    // geocodeResult enviando todo el resultado obtenido
+    geocoder.geocode({ 'address': address}, geocodeResult);
+}
+function geocodeResult(results, status) {
+	// Verificamos el estatus
+	if (status == 'OK') {
+		// Si hay resultados encontrados, centramos y repintamos el mapa
+		// esto para eliminar cualquier pin antes puesto
+		var mapOptions = {
+			center : results[0].geometry.location,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map($("#map_canvas").get(0), mapOptions);
+		// fitBounds acercará el mapa con el zoom adecuado de acuerdo a lo
+		// buscado
+		map.fitBounds(results[0].geometry.viewport);
+		// Dibujamos un marcador con la ubicación del primer resultado obtenido
+		var markerOptions = {
+			position : results[0].geometry.location
+		}
+		var marker = new google.maps.Marker(markerOptions);
+		marker.setMap(map);
+	} else {
+		// En caso de no haber resultados o que haya ocurrido un error
+		// lanzamos un mensaje con el error
+		alert("Geocoding no tuvo éxito debido a: " + status);
+	}
+}
 
 function ajaxPost(data){
 	$.ajax({
     	type : 'POST',
     	url : 'inicioHome2',
     	contentType: 'application/json',
-    	data : JSON.stringify(data),
+    	data : data,
     	success : function(data, status, xhr){
     		console.info(data);
-    		console.log(status);
-    		console.log(xhr);
 	
     	},
     	error: function(error){

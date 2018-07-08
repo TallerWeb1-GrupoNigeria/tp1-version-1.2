@@ -128,7 +128,4 @@ public class Direccion {
 		this.evento = evento;
 	}
 	
-	
-	
-	
 }

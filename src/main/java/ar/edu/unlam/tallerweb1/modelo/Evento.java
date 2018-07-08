@@ -1,14 +1,21 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-import javax.persistence.CascadeType;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Evento {
@@ -16,14 +23,11 @@ public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	
 	private String nombre;
 	private String descripcion;
 	private String fecha;
 	private String horaInicio;
 	private String horaFin; 
-	// private String direccion;
 	private String telefono; 
 	private String imagen1;
 	private String imagen2;
@@ -34,7 +38,6 @@ public class Evento {
 	private String instagram;
 	private String mostrar;
 	private String[] etiqueta;
-	private Double precio;
 	
 	@ManyToOne
 	private Prestacion prestacion;
@@ -47,35 +50,37 @@ public class Evento {
 	@ManyToOne
 	private Costo costoClasicacion;
 	
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
-	@JoinColumn(name="localizacion_id")
-	private Localizacion localizacion;
-	
-	
-	@ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="evento_id")
-	private Carrito carrito;
-	
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)			// RELACION CON LOCALIZACION
+	@OneToOne(fetch=FetchType.EAGER)		// RELACION CON DIRECCION
+	@Cascade(value = CascadeType.ALL)
 	@JoinColumn(name="direccion_id")
 	private Direccion direccion;
 	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@Cascade(value = CascadeType.ALL)
+    @JoinTable(name="usuario_evento", joinColumns={@JoinColumn(name="id_evento",referencedColumnName="id")}, 
+    inverseJoinColumns={@JoinColumn(name="id_usuario",referencedColumnName = "id")})
+	private Set<Usuario> usuarios = new HashSet<Usuario>();
 	
-	// CONSTRUCTORES
-
 	public Evento() {
 
 	}
 	
+	public Evento(String nombre, String descripcion, String fecha) {
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fecha = fecha;
+//		this.carrito = carrito;
+//		this.direccion = direccion;
+	}
 	
-	public Evento(String nombre, String descripcion, String fecha, String horaInicio, String horaFin, String telefono,
-			String imagen1, String imagen2, String imagen3, String correo, String facebook, String twitter,
-			String instagram, String mostrar, String[] etiqueta, Double precio, Prestacion prestacion,
-			TipoEstablecimiento tipoEstablecimiento, Costo costoClasicacion, Localizacion localizacion, Carrito carrito,
-			Direccion direccion) {
+
+	public Evento(Long id, String nombre, String descripcion, String fecha, String horaInicio, String horaFin,
+			String telefono, String imagen1, String imagen2, String imagen3, String correo, String facebook,
+			String twitter, String instagram, String mostrar, String[] etiqueta, Prestacion prestacion,
+			TipoEstablecimiento tipoEstablecimiento, Costo costoClasicacion, Direccion direccion,
+			Set<Usuario> usuarios) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
@@ -91,18 +96,12 @@ public class Evento {
 		this.instagram = instagram;
 		this.mostrar = mostrar;
 		this.etiqueta = etiqueta;
-		this.precio = precio;
 		this.prestacion = prestacion;
 		this.tipoEstablecimiento = tipoEstablecimiento;
 		this.costoClasicacion = costoClasicacion;
-		this.localizacion = localizacion;
-		this.carrito = carrito;
 		this.direccion = direccion;
+		this.usuarios = usuarios;
 	}
-
-	
-	// GETS SETS
-	
 
 	public Long getId() {
 		return id;
@@ -232,14 +231,6 @@ public class Evento {
 		this.etiqueta = etiqueta;
 	}
 
-	public Double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(Double precio) {
-		this.precio = precio;
-	}
-
 	public Prestacion getPrestacion() {
 		return prestacion;
 	}
@@ -264,35 +255,21 @@ public class Evento {
 		this.costoClasicacion = costoClasicacion;
 	}
 
-
-	public Localizacion getLocalizacion() {
-		return localizacion;
-	}
-
-
-	public void setLocalizacion(Localizacion localizacion) {
-		this.localizacion = localizacion;
-	}
-
-
-	public Carrito getCarrito() {
-		return carrito;
-	}
-
-
-	public void setCarrito(Carrito carrito) {
-		this.carrito = carrito;
-	}
-
-
 	public Direccion getDireccion() {
 		return direccion;
 	}
 
 
+	public Set<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	
 	
 }

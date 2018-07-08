@@ -1,16 +1,20 @@
 
 <%@ include file="_header.jsp" %>
 <%@ include file="_menuAdmin.jsp" %>
-<script src="js/mapas2.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<link rel="stylesheet" href="css/css-mapa2.css" type="text/css">
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsOyLppGoYEHhTvwny8xDgKj96ZzSIFU&libraries=places&callback=initAutocomplete" async defer></script>
-    
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<script src="js/mapas2.js"></script>
 
  <div class="container" id="contenedor_form">    
 	 
 	  <br />
 	<div class="row">
-	 <div class="col-md-8">
+
+	 <div class="col-md-7">
+
 	  <form:form action="crearEvento" method="POST" modelAttribute="keyEvento">
 	
 	   <div class="form-group">
@@ -41,7 +45,7 @@
 	   
 	   <div class="form-group">
 	    <label>Direccion:</label>
-	       <form:input path="direccion" type="text" id="direccion" class="input form-control"/>
+	       <form:input path="direccion" type="text" id="direccion" class="input form-control" value="${direccion.getStreet_number() }"/>
 	   </div>
 	   
 	   <div class="form-group">
@@ -112,44 +116,75 @@
 	
 	  </form:form>
     </div>
-    <div class="col-md-4">
-    <!-- input id="pac-input" class="controls" type="text" placeholder="Bucar..."-->
-	<div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
-    </div>
-	<div id="map"></div>
-	<table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <!-- Note: Selection of address components in this example is typical.
-             You may need to adjust it for the locations relevant to your app. See
-             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
-        -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
+    <div class="col-md-5">
+   <!-- MAPA CON BUSCADOR -->
+		<div id="locationField">
+	      <input id="autocomplete" placeholder="Ingrese su dirección" onFocus="geolocate()" type="text"></input>
+	    </div>
+	    
+		<div id="map"></div>
+		
+		<!-- table id="address">
+	      <tr>
+	        <td class="label">Dirección</td>
+	        <td class="slimField"><input class="field" id="street_number"
+	              disabled="true"></input></td>
+	        <td class="wideField" colspan="2"><input class="field" id="route"
+	              disabled="true"></input></td>
+	      </tr>
+	      <tr>
+	        <td class="label">Cuidad</td>
+	        <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true"></input></td>
+	      </tr>
+	      <tr>
+	        <td class="label">Localidad</td>
+	        <td class="slimField"><input class="field"  id="administrative_area_level_1" disabled="true"></input></td>
+	        <td class="label">Codigo postal</td>
+	        <td class="wideField"><input class="field" id="postal_code"   disabled="true"></input></td>
+	      </tr>
+	      <tr>
+	        <td class="label">Pais</td>
+	        <td class="wideField" colspan="3"><input class="field"  id="country" disabled="true"></input></td>
+	      </tr>
+	    </table-->
+	    
+	    <form >
+	    	<div class="form-row">
+	    		<div class="form-group col-md-4">
+			      <label for="street_number">Nro calle</label>
+			      <input type="text" class="form-control" id="street_number" placeholder="">
+			    </div>
+			    <div class="form-group col-md-8">
+			      <label for="route">Calle</label>
+			      <input type=""text"" class="form-control" id="route" placeholder="">
+			    </div>
+	    	</div>
+	    	<div class="form-row">
+	    		<div class="form-group col-md-12">
+	    			<label for="locality">Cuidad</label> 
+					<input type="text"	class="form-control" id="locality">
+	    		</div>
+	    	</div>
+			<div class="form-row">
+				<div class="form-group col-md-8">
+					<label for="administrative_area_level_1">Localidad</label> 
+					<input type="text"	class="form-control" id="administrative_area_level_1">
+				</div>
+				
+				<div class="form-group col-md-4">
+					<label for="postal_code">Codigo postal</label> 
+					<input type="text" 	class="form-control" id="postal_code">
+				</div>
+			</div>
+			<div class="form-row">
+	    		<div class="form-group col-md-12">
+	    			<label for="country">Pais</label> 
+					<input type="text"	class="form-control" id="country">
+	    		</div>
+	    	</div>
+	    	<button type="submit" class="btn btn-primary">Validar dirección</button>
+			
+		</form>
     </div>
     
    </div>

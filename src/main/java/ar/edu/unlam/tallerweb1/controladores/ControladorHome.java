@@ -29,7 +29,6 @@ public class ControladorHome {
 		return new ModelAndView ("inicio",model);
 	}
 
-
 	@RequestMapping(path = "/filtros-Busqueda", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("evento") Evento evento) {
 		ModelMap model = new ModelMap();
@@ -38,6 +37,5 @@ public class ControladorHome {
 		 model.put("keyListarEventos", ResultadoDeEventos);
 		return new ModelAndView("inicio", model);
 	}
-
 
 }

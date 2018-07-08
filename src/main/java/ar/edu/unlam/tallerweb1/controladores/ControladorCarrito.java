@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Carrito;
 import ar.edu.unlam.tallerweb1.modelo.Evento;
+import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioCarrito;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvento;
 
@@ -24,19 +25,8 @@ public class ControladorCarrito {
 	@Inject
 	private ServicioEvento servicioEvento;
 	
+	
 	Carrito carrito = new Carrito();
-	
-	
-	// LISTADO carrito
-	@RequestMapping(path="/misEventos")
-	public ModelAndView misEventos(){ 
-		
-		ModelMap model = new ModelMap();
-		model.put("keyCarrito", servicioCarrito.listarEventosDelCarritoService());
-		
-		return new ModelAndView("misEventos",model);
-	 }
-	
 	
 	
 	// Agregar carrito
@@ -44,14 +34,24 @@ public class ControladorCarrito {
 	public ModelAndView agregarEventoAlCarrito(@RequestParam("id") Long id) {
 		
 		Evento evento = servicioEvento.buscarEventoPorIdService(id);
-		servicioCarrito.crearCarritoService(carrito);
-		ModelMap model = new ModelMap();
+		Usuario usuarioLogeado = new Usuario(1l,"admin","admin@admin.com","1234","1234","admin",null);   //TODO :  falta ver como obtener el usuario de sesion actual(logeado)
 		
-		servicioCarrito.agregarEventoAlCarritoService(carrito, evento);
-		model.put("keyListadoEventos", servicioCarrito.listarEventosDelCarritoService());
+		servicioEvento.agregarUsuarioAEventoService(evento, usuarioLogeado);
+
 		
-		return new ModelAndView ("misEventos",model);
+		return new ModelAndView("redirect:/misEventos");
 	}
+	
+	
+	// LISTADO carrito
+	@RequestMapping(path="/misEventos")
+	public ModelAndView misEventos(){ 
+		
+		ModelMap model = new ModelMap();
+		model.put("keyListadoEventos", servicioCarrito.listarCarritoService());
+		
+		return new ModelAndView("misEventos",model);
+	 }
 	
 	
 }

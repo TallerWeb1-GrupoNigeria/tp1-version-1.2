@@ -3,11 +3,15 @@ package ar.edu.unlam.tallerweb1.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Carrito {
@@ -17,22 +21,30 @@ public class Carrito {
 	private Long id;
 
 	
-	@OneToMany(mappedBy="carrito")
-	private List<Evento> evento = new ArrayList<>();
-
+	@OneToMany(mappedBy="carrito")							// RELACION CON EVENTO
+	private List<Evento> evento = new ArrayList<Evento>();
+	
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
 
 	
-	// constructores
-
+	
+	
+	
+	
 	public Carrito() {
 	}
 
-	public Carrito(List<Evento> evento) {
+	public Carrito(List<Evento> evento, Usuario usuario) {
 		this.evento = evento;
+		this.usuario = usuario;
 	}
 
-
-	// getters setters
+	
+	
+	
+	
 	
 	public Long getId() {
 		return id;
@@ -49,8 +61,16 @@ public class Carrito {
 	public void setEvento(List<Evento> evento) {
 		this.evento = evento;
 	}
-	
-	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
 	
 	
 }
