@@ -72,12 +72,44 @@
 				
 			</div>
 <!-- ESACIO DEL FILTRO  -->
-<form:form action="filtros-Busqueda" method="POST" modelAttribute="evento">
-  <p>Buscar Evento por nombre</p>
+<div class="py-2">
+    	<div class="container">
+			<div class="row">
+<form:form class="form-inline" role="form" action="filtros-Busqueda" method="POST" modelAttribute="evento">
+<div class="form-group">
+<!--   <label class="sr-only">Nombre</label>-->
+	<br>Nombre </br>
 	<form:input path="nombre" type="text" id="nomb" class="form-control"/>     		  
 	<br/>
+	</div>
+	<div class="form-group">
+	  <br> Prestaciones</br>
+	 <!--  <label class="sr-only">Prestaciones</label> -->
+<%-- 	<form:select path="" item="${keySelectPrestaciones}" type="text" var="prestaciones" class="form-control"/>     		  
+	</div> --%>
+	
+<%-- 	
+	 <form:select path="prestaciones">
+                <form:option value="" label="--Select phone"/>
+                <form:options items="${keySelectPrestaciones}" />
+            </form:select>
+             --%>
+            
+	<div class="form-group">
+	<br>Otro</br>
+	<form:select path="" type="text" id="otroFiltro" class="form-control"/>  
+		
+	</div>
+	
 	<button class="btn btn-lg btn-primary btn-block" Type="Submit">Buscar</button>
+	
 </form:form>
+</div>	
+</div>
+</div>
+
+
+
 
 <!-- 2 CARDS -->
 <!-- LISTA DE EVENTOS  -->
@@ -85,7 +117,7 @@
       	<c:forEach items="${keyListarEventos}" var="evento">
 			
 			<!-- SE AGREGO LA FUNCION IF DE 'SI' PARA MOSTRAR Y 'NO' PARA NO MOSTRAR EL EVENTO -->
-			<c:if test="${ evento.getMostrar() eq 'si' }">
+			<c:if test="${evento.getMostrar() eq 'si' }">
 			 <div class="col-md-4">
 			 
 			   <div class="card">

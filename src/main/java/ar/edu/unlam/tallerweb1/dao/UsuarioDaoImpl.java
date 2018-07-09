@@ -35,6 +35,6 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	@Override
 	public Usuario consultarUsuarioEnSession() {
 
-		return new Usuario("re", "hjhj", "sss", "saas", "saass");
+		return new Usuario();
 	}
 }

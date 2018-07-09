@@ -12,20 +12,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Evento;
+import ar.edu.unlam.tallerweb1.modelo.Prestacion;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvento;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPrestacion;
 
 @Controller
 public class ControladorHome {
 
+	
+
+	@Inject
+	private ServicioPrestacion servicioPrestacion;
 	@Inject
 	private ServicioEvento servicioEvento;
 	
 	@RequestMapping(path = "/inicioHome")
-	public ModelAndView inicio(@ModelAttribute("evento") Evento evento) {
+	public ModelAndView inicio(@ModelAttribute("evento") Evento evento,
+								@ModelAttribute("prestaciones") Prestacion prestaciones) {
 		
 		ModelMap model = new ModelMap();
 		model.put("keyListarEventos", servicioEvento.listarEventosService());
-	
+		model.put("keySelectPrestaciones", servicioPrestacion.listarPrestacionService());
 		return new ModelAndView ("inicio",model);
 	}
 
